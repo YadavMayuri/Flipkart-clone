@@ -134,9 +134,147 @@ html{
     font-weight: 500;
 }
 
+/* register form css */
 
+.form-container{
+    width: 55%;
+    display: flex;
+    justify-content: space-between;
+    margin: 4rem auto;
+    border: .2rem solid black;
+}
+.left-side-content{
+    width: 40%;
+    border: .1rem solid purple;
+    padding: 3rem 2.5rem;
+}
+.l-right-side {
+    width: 60%;
+    border: .1rem solid green;
+    padding: 2rem 3rem;
 
+}
+.l-input-login {
+    position: relative;
+    width: 100%;
+    height: 6rem;
+    /* margin-bottom: 2rem; */
+}
 
+.l-input-login>input {
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: transparent;
+    padding: 1.4rem;
+    /* border: .2rem solid red; */
+    font-size: 1.4rem;
+}
+
+.l-input-login>label {
+    position: absolute;
+    top: 1;
+    left: 1;
+    padding: 1.4rem;
+    display: inline-block;
+    font-size: 1.4rem;
+    transition: .5s;
+    pointer-events: none;
+
+}
+
+.l-input-login input:focus~label,
+.l-input-login input:valid~label {
+    transform: translateX(-1rem) translateY(-1.8rem);
+    font-size: 1rem;
+    /* margin-top: 1.8rem; */
+}
+.l-close-btn>a {
+    font-size: 2rem;
+    color: #535665;
+    cursor: pointer;
+    font-weight: 600;
+    outline: none;
+
+}
+.l-input-login {
+    border-bottom: .1rem solid lightgray;
+    padding: 1rem;
+    font-size: 1.4rem;
+    /* margin-top: 3rem; */
+}
+
+.l-input-login>input {
+    margin-top: 1rem;
+    border: none;
+    outline: none;
+    width: 100%;
+    font-size: 2rem;
+    font-weight: 600;
+    color: #282c3f;
+    line-height: 1.2;
+    letter-spacing: .04rem;
+    font-family: sans-serif;
+
+}
+.l-login-btn {
+    width: 100%;
+    margin-bottom: 1rem;
+    margin-top: 1rem;
+}
+
+.l-login-btn>input {
+    width: 100%;
+    cursor: pointer;
+    text-align: center;
+    border: none;
+    display: inline-block;
+    line-height: .5rem;
+    font-size: 1.4rem;
+    font-weight: 600;
+    padding: 2.2rem;
+    margin-top: 1rem;
+    color: white;
+    background-color: #fc8019;
+    color: #fff;
+    text-decoration: none;
+    text-transform: uppercase;
+    /* box-shadow: 0 .1rem .3rem 0 rgba(0, 0, 0, .12); */
+
+}
+.l-existing-user{
+    width: 100%;
+    margin-bottom: 1rem;
+    margin-top: 1rem;
+}
+.l-existing-user input{
+    width: 100%;
+    cursor: pointer;
+    text-align: center;
+    border: none;
+    display: inline-block;
+    line-height: .5rem;
+    font-size: 1.4rem;
+    font-weight: 600;
+    padding: 2.2rem;
+    margin-top: 1rem;
+    color: #2874f0;
+    background-color:white;
+    box-shadow: 0 .1rem .3rem 0 rgba(0, 0, 0, .35);
+
+}
+.l-login-para {
+    font-size: 1.4rem;
+    color: #686b78;
+    line-height: 1.2;
+    margin-top: 1.4rem;
+}
+
+.l-login-para>p>a {
+    text-decoration: none;
+    color: #2874f0;
+    cursor: pointer;
+}
 
 
 
