@@ -34,7 +34,7 @@
                 </div>
 
                 <div class="right-navbar">
-                    <div class="login-btn">Login</div>
+                    <div class="login-btn" id="switch" onclick="window.location.href='./register.html'">Login</div>
                     <div class="become-seller">Become a Seller</div>
                     <div class="more-wrap">
                         <span class="more-sp">More</span>
@@ -44,6 +44,7 @@
                         <span><i class="fa-solid fa-cart-shopping"></i></span>
                         <span>Cart</span>
                     </div>
+                    <div id="logout"> </div>
                 </div>
             </div>
         </div>
@@ -61,80 +62,117 @@
             </div>
             <div class="category-wrap">
                 <div class="ctg-img">
-                    <img src="https://rukminim1.flixcart.com/flap/128/128/image/29327f40e9c4d26b.png?q=100" alt="">
+                    <img src="https://rukminim1.flixcart.com/flap/128/128/image/22fddf3c7da4c4f4.png?q=100" alt="">
                 </div>
                 <div class="ctg-name">
-                    Grocery
+                    Mobiles
+                </div>
+            </div>
+            <div class="category-wrap" onclick="window.location.href='./multipleProduct.html'">
+                <div class="ctg-img">
+                    <img src="https://rukminim1.flixcart.com/fk-p-flap/128/128/image/0d75b34f7d8fbcb3.png?q=100" alt="">
+                </div>
+                <div class="ctg-name">
+                    Fashion
                 </div>
             </div>
             <div class="category-wrap">
                 <div class="ctg-img">
-                    <img src="https://rukminim1.flixcart.com/flap/128/128/image/29327f40e9c4d26b.png?q=100" alt="">
+                    <img src="https://rukminim1.flixcart.com/flap/128/128/image/69c6589653afdb9a.png?q=100" alt="">
                 </div>
                 <div class="ctg-name">
-                    Grocery
+                    Electronics
                 </div>
             </div>
             <div class="category-wrap">
                 <div class="ctg-img">
-                    <img src="https://rukminim1.flixcart.com/flap/128/128/image/29327f40e9c4d26b.png?q=100" alt="">
+                    <img src="https://rukminim1.flixcart.com/flap/128/128/image/ab7e2b022a4587dd.jpg?q=100" alt="">
                 </div>
                 <div class="ctg-name">
-                    Grocery
+                    Home
                 </div>
             </div>
             <div class="category-wrap">
                 <div class="ctg-img">
-                    <img src="https://rukminim1.flixcart.com/flap/128/128/image/29327f40e9c4d26b.png?q=100" alt="">
+                    <img src="https://rukminim1.flixcart.com/flap/128/128/image/0ff199d1bd27eb98.png?q=100" alt="">
                 </div>
                 <div class="ctg-name">
-                    Grocery
+                    Appliances
                 </div>
             </div>
             <div class="category-wrap">
                 <div class="ctg-img">
-                    <img src="https://rukminim1.flixcart.com/flap/128/128/image/29327f40e9c4d26b.png?q=100" alt="">
+                    <img src="https://rukminim1.flixcart.com/flap/128/128/image/71050627a56b4693.png?q=100" alt="">
                 </div>
                 <div class="ctg-name">
-                    Grocery
+                    Travel
                 </div>
             </div>
             <div class="category-wrap">
                 <div class="ctg-img">
-                    <img src="https://rukminim1.flixcart.com/flap/128/128/image/29327f40e9c4d26b.png?q=100" alt="">
+                    <img src="https://rukminim1.flixcart.com/flap/128/128/image/f15c02bfeb02d15d.png?q=100" alt="">
                 </div>
                 <div class="ctg-name">
-                    Grocery
+                    Top Offer
                 </div>
             </div>
             <div class="category-wrap">
                 <div class="ctg-img">
-                    <img src="https://rukminim1.flixcart.com/flap/128/128/image/29327f40e9c4d26b.png?q=100" alt="">
+                    <img src="https://rukminim1.flixcart.com/flap/128/128/image/dff3f7adcf3a90c6.png?q=100" alt="">
                 </div>
                 <div class="ctg-name">
-                    Grocery
+                    Beauty,Toys & More
                 </div>
             </div>
             <div class="category-wrap">
                 <div class="ctg-img">
-                    <img src="https://rukminim1.flixcart.com/flap/128/128/image/29327f40e9c4d26b.png?q=100" alt="">
+                    <img src="https://rukminim1.flixcart.com/fk-p-flap/128/128/image/05d708653beff580.png?q=100" alt="">
                 </div>
                 <div class="ctg-name">
-                    Grocery
+                    Two Wheelers
                 </div>
             </div>
-            <div class="category-wrap">
-                <div class="ctg-img">
-                    <img src="https://rukminim1.flixcart.com/flap/128/128/image/29327f40e9c4d26b.png?q=100" alt="">
-                </div>
-                <div class="ctg-name">
-                    Grocery
-                </div>
-            </div>
+        </div>
+
+        <!-- banner image -->
+        <div class="banner-wrap">
+            <img src="https://storiesflistgv2.blob.core.windows.net/stories/2021/05/FKSfooterbanner_new__.jpg" alt="">
         </div>
     </div>
 
 
+    <script>
+         window.onload = function () {
+            // alert("working")
+            var currentUser = JSON.parse(localStorage.getItem("FlipcartCurrentUser"))
+            // console.log(currentUser,"current user");
+            if (!!currentUser) {
+                // alert(currenUser,"username")
+                var logoutDiv = document.getElementById("logout")
+                var divfromHtml = document.getElementById("switch");
+                // console.log(divfromHtml, "divfromhtml");
+                // var h1=document.createElement("h1");
+                // h1.innerText="Mayuri"
+                // divfromHtml.append(h1)
+                var button = '<span class="lgbtn-wrap"><i class="fa-solid fa-arrow-right-from-bracket id=logout-icon"></i> <button onclick="logout()" class="logout-button-txt">Logout</button></span>'
+                var name = `<span>${currentUser.userName}</span>`;
+                divfromHtml.innerHTML = name;
+                logoutDiv.innerHTML = button;
+
+            }
+            //  else {
+            //     alert("current user absent")
+            // }
+         }
+
+         function logout() {
+            alert("Logout successful.")
+            localStorage.removeItem("FlipcartCurrentUser")
+            window.location.reload()
+
+
+        }
+    </script>
 
 
     <script src="./main.js"></script>

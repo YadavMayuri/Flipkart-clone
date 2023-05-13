@@ -15,7 +15,7 @@ html{
     padding: 1rem 0;
 }
 .navbar{
-    width: 75%;
+    width: 80%;
     height: 100%;
     /* border: .1rem solid blue; */
     display: flex;
@@ -38,7 +38,7 @@ html{
     display: flex;
     justify-content: space-between;
     align-items: center;
-    font-size: 1.6rem;
+    font-size: 1.5rem;
     font-weight: 600;
 }
 .logo-wrap{
@@ -107,24 +107,33 @@ html{
     outline: none;
     padding: .6rem 3.5rem;
     border-radius: .2rem;
+    cursor: pointer;
 }
 .category-nav-wrap{
     width: 100%;
     display: flex;
     justify-content: space-around;
+    /* border: .1rem solid purple ; */
     align-items: center;
+    padding-bottom: 1.2rem;
+    box-shadow: 0 .1rem .3rem 0 rgba(0, 0, 0, .45);
+
 }
 .category-wrap{
-    width: 7%;
+    /* width: 7%; */
     display: flex;
     flex-direction: column;
     /* border: .1rem solid red; */
-    padding: 1rem;
+    cursor: pointer;
+}
+.ctg-img{
+    width: 50%;
+    margin: auto;
+    padding-top: 2rem;
 }
 
 .ctg-img img{
     width: 100%;
-    margin: auto;
     /* border: .1rem solid blue; */
     height: 100%;
 }
@@ -141,11 +150,12 @@ html{
     display: flex;
     justify-content: space-between;
     margin: 4rem auto;
-    border: .2rem solid black;
+    box-shadow: 0 .1rem .3rem 0 rgba(0, 0, 0, .70);
+
 }
 .left-side-content{
     width: 40%;
-    border: .1rem solid purple;
+    /* border: .1rem solid purple; */
     padding: 3rem 2.5rem;
     display: flex;
     flex-direction: column;
@@ -154,7 +164,7 @@ html{
 }
 .l-right-side {
     width: 60%;
-    border: .1rem solid green;
+    /* border: .1rem solid green; */
     padding: 2rem 3rem;
 
 }
@@ -243,16 +253,12 @@ html{
     color: #fff;
     text-decoration: none;
     text-transform: uppercase;
-    /* box-shadow: 0 .1rem .3rem 0 rgba(0, 0, 0, .12); */
 
 }
-.l-existing-user{
+
+.l-existing-user {
     width: 100%;
     margin-bottom: 1rem;
-    margin-top: 1rem;
-}
-.l-existing-user input{
-    width: 100%;
     cursor: pointer;
     text-align: center;
     border: none;
@@ -294,6 +300,144 @@ html{
     width: 100%;
     height: 100%;
 }
+#login-screen .left-b-img-wrap{
+    margin-top: 14rem;
+}
+
+.logout-button-txt{
+    border: none;
+    outline: none;
+    background-color: transparent;
+    color: white;
+    font-weight: 600;
+    font-size: 1.5rem;
+    cursor: pointer;
+}
+
+/* multiple products */
+
+.products-wrapper{
+    width: 96%;
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    gap: 1rem;
+    margin: 4rem auto;
+}
+.Singleproduct{
+    border: .1rem solid lightgray;
+    width: 18%;
+    cursor: pointer;
+}
+.product-image-wrapper{
+    width: 100%;
+    height: 28rem;
+
+}
+.product-image-wrapper img{
+    width: 100%;
+    height: 100%;
+}
+.product-info-wrapper{
+    width: 100%;
+    /* border: .1rem solid green; */
+    padding: .5rem;
+}
+.productBrandName{
+    font-size: 1.4rem;
+    color: rgb(135, 135, 135);
+    font-weight: 550;
+    font-family: Roboto,Arial,sans-serif;
+    letter-spacing: .01rem;
+    margin-bottom: .4rem;
+}
+.proname-fcart-assured{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: .4rem;
+
+}
+.productName{
+    width: 70%;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+    font-size: 1.4rem ;
+}
+.f-assured-img-wrap{
+    width: 30%;
+}
+.f-assured-img-wrap img{
+    width: 100%;
+    height: 100%;
+}
+.price-info-wrap{
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: .4rem;
+
+}
+.actual-p-price{
+    font-size: 1.4rem;
+}
+.strike-price{
+    font-size: 1.2rem;
+    text-decoration: line-through;
+    color: #878787;
+}
+.discount-txt{
+    color: #388e3c;
+    font-size: 1.4rem;
+    font-weight: 550;
+}
+.product-size{
+    font-size: 1.4rem;
+    color: rgb(135, 135, 135);
+    margin-bottom: .3rem;
+
+}
+.size-info{
+    font-size: 1.4rem;
+    color: #212121;
+}
+.banner-wrap img{
+    width: 100%;
+    height: 100%;
+    margin-top: 2rem;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
