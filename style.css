@@ -507,10 +507,11 @@ html{
     font-size: 1.4rem;
     padding: 1.7rem 0;
     text-transform: uppercase;
-
+    cursor: pointer;
 
 }
 .buynowButton{
+    cursor: pointer;
     width: 48%;
     background-color: #FB641B;
     color: white;
@@ -719,25 +720,34 @@ html{
 
 .cart-main-content-wrap{
     width: 100%;
-    border: .2rem solid red;
+    /* border: .2rem solid red; */
     margin-top: 2rem;
     display: flex;
     justify-content: space-between;
+    background-color: rgb(236, 235, 235);
 }
 .left-side-cart-info{
     width: 66%;
-    border: .1rem solid blue;
+    /* border: .1rem solid blue; */
     padding: 1rem;
 }
 .rght-side-cst-info{
     width: 32%;
-    border: .1rem solid blue;
+    /* border: .1rem solid blue; */
+    padding:1rem 1rem;
+    /* background-color: white; */
+    
+}
+.right-pr-content{
+    background-color: white;
+    padding: 1rem 1rem 2rem 1rem;
 }
 .c-p-cl{
     display: flex;
     justify-content: space-evenly;
     padding-top: 1.2rem;
     font-size: 1.6rem;
+    background-color: white;
 }
 .selected-opt{
     color: #2874f0;
@@ -745,6 +755,7 @@ html{
     padding-bottom: 1rem;
 }
 .location-wrap{
+    background-color: white;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -763,15 +774,16 @@ html{
     font-weight: 550;
 }
 .c-product-info-container{
-    border: .1rem solid blue;
+    /* border: .1rem solid blue; */
     margin-top: 1rem;
     display: flex;
     justify-content: space-between;
     padding: 1rem;
+    background-color: white;
 }
 .image-qty-wrap{
     width: 12%;
-    border: .1rem solid greenyellow;
+    /* border: .1rem solid greenyellow; */
     display: flex;
     flex-direction: column;
 }
@@ -800,11 +812,12 @@ html{
 }
 .cart-product-indormation{
     width: 50%;
-    border: .1rem solid red;
+    /* border: .1rem solid red; */
 }
 .deliver-info{
     width: 35%;
-    border: .1rem solid red;
+    /* border: .1rem solid red; */
+    text-align: right;
 }
 .product-na-c{
     font-size: 1.4rem;
@@ -832,5 +845,87 @@ html{
     color: #878787;
     font-weight: 550;
 }
+/* ----------------------------------- */
+.pricecontainer-c{
+    display: flex;
+    margin-top: 1rem;
+}
+.realprice-c{
+    font-size: 1.8rem;
+    font-weight: 550;
+    margin-right: 1rem;
+}
+.linethroughPrice-c{
+    font-size: 1.5rem;
+    text-decoration: line-through;
+    color: #878787;
+    margin-right: 1rem;
+}
+.discounttext-c{
+    font-size: 1.5rem;
+    color: #26a541;
+    font-weight: 550;
+}
+.save-remove-wrap{
+    font-size: 1.4rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 60%;
+    margin-top: 1.2rem;
+}
+.d-c-info{
+    font-size: 1.4rem;
+}
+.free{
+    color: #388e3c;
+}
+.line-t{
+    text-decoration:line-through ;
+    color: #878787;
+}
+.r-p-wrap{
+    display: flex;
+    justify-content: space-between;
+    font-size: 1.4rem;
+    margin-top: 1rem;
+}
+.p-heading{
+    font-size: 1.5rem ;
+    text-transform: uppercase;
+    margin-bottom: 1rem;
+    margin-top: 1rem;
+    color: #878787;
+}
+.pr-co{
+    color: #388e3c;
+}
+.hrline{
+    border: .1rem solid lightgrey;
+    margin: 1rem 0;
+}
+.l-sen{
+    font-size: 1.4rem;
+    font-weight: 550;
+    color: #388e3c;
+    margin-top: 1rem;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 

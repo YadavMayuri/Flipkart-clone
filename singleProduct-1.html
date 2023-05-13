@@ -113,15 +113,14 @@
                     </div>
 
                     <div class="highlight-img">
-                        <img src="https://rukminim1.flixcart.com/image/832/832/kflftzk0/top/9/f/j/xl-gr5693-pink-harpa-original-imafwysgrnswdqk6.jpeg?q=70"
-                            alt="">
+                        <div id="singleProductImage"></div>
                     </div>
                 </div>
 
                 <div class="addcart-buynow-btns">
                     <div class="addCartButton">
                         <span><i class="fa-solid fa-cart-shopping"></i></span>
-                        <span class="btntxt">Add To Cart</span>
+                        <span class="btntxt" id="for-add-to-cart-btn">Add To Cart</span>
                     </div>
 
                     <div class="buynowButton">
@@ -148,10 +147,10 @@
                     </div>
                 </div>
 
-                <div class="pBrandName">harpa</div>
-                <div class="proName">Casual Roll Up Sleeves Solid Women Pink Top</div>
+                <div class="pBrandName"  id="for-product-brand"> </div>
+                <div class="proName"  id="for-product-name"> </div>
                 <div class="pricecontainer">
-                    <div class="realprice">₹374</div>
+                    <div class="realprice" id="for-product-price">₹</div>
                     <div class="linethroughPrice">₹1,199</div>
                     <div class="discounttext">68% off</div>
                 </div>
@@ -312,7 +311,7 @@
             var productBrand = `${product.ProBrand} `
             var productName = `${product.proName}`
             var productprice = `${product.proPrice}`
-            var addtocart = ` <button onclick='addCart(${JSON.stringify(product)})' >Add to cart</button>`
+            var addtocart = ` <span onclick='addCart(${JSON.stringify(product)})' >Add to cart</span>`
 
             divToAppendProductImage.innerHTML = structure;
             divToAppendProductBrand.innerHTML = productBrand;
@@ -338,7 +337,7 @@
                         userdata[i].cartProducts.push(product);
                     }
                     alert("Product added to cart")
-                    window.location.href = "./cart.html"
+                    window.location.href = "./cart-1.html"
                 }
             }
             localStorage.setItem("FlipkartUsers", JSON.stringify(userdata))
