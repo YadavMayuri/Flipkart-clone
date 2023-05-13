@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -9,9 +8,8 @@
     <link rel="stylesheet" href="style.css">
     <script src="https://kit.fontawesome.com/174a9c1444.js" crossorigin="anonymous"></script>
 </head>
-
 <body>
-    <div id="multiplePro">
+    <div id="singlPro-screen">
         <div class="main-navbar-wrapper">
             <div class="navbar">
                 <div class="left-navbar">
@@ -52,38 +50,42 @@
             </div>
         </div>
 
-        <div class="products-wrapper" id="FproductWrapper">
+        <div class="products-wrapper" >
             <div class="Singleproduct">
-                <div class="product-image-wrapper">
-                   
+                <div class="product-image-wrapper" >
+                   <div id="singleProductImage"></div>
                 </div>
 
                 <div class="product-info-wrapper">
-                    <div class="productBrandName"> </div>
+                    <div class="productBrandName" id="for-product-brand"> </div>
                     <div class="proname-fcart-assured">
-                        <div class="productName"> </div>
+                        <div class="productName" id="for-product-name" > </div>
                         <div class="f-assured-img-wrap">
                             <img src="https://static-assets-web.flixcart.com/fk-p-linchpin-web/fk-cp-zion/img/fa_62673a.png"
                                 alt="">
                         </div>
                     </div>
                     <div class="price-info-wrap">
-                        <span class="actual-p-price">₹ </span>
+                        <span class="actual-p-price" id="for-product-price">₹ </span>
                         <span class="strike-price">₹1,000</span>
                         <span class="discount-txt">50% off</span>
                     </div>
                     <div class="product-size">Size : <span class="size-info"> XL, XXL, 3XL, 4XL</span></div>
+
+                    <div class="addcartbtn" id="for-add-to-cart-btn"> </div>
                 </div>
 
 
 
             </div>
         </div>
-    </div>
 
+
+    </div>
+    
 
     <script>
-        window.onload = function () {
+         window.onload = function () {
             // alert("working")
             var currentUser = JSON.parse(localStorage.getItem("FlipcartCurrentUser"))
             // console.log(currentUser,"current user");
@@ -101,58 +103,55 @@
                 logoutDiv.innerHTML = button;
 
             }
-            //     else {
-            //        alert("current user absent")
-            //    }
 
+            var product = JSON.parse(localStorage.getItem("FlipkartCurrentProduct"));
 
-            var divToAppendAllProducts = document.getElementById("FproductWrapper")
-
-            var finalFlipkartMultiplePro = ""
-
-            var productsFromLS = JSON.parse(localStorage.getItem("FlipkartProducts"))
-
-            for (var i = 0; i < productsFromLS.length; i++) {
-
-                finalFlipkartMultiplePro += ` <div class="Singleproduct" onclick='redirect(${JSON.stringify(productsFromLS[i])})'>
-                <div class="product-image-wrapper">
-                   <img src='${productsFromLS[i].proImage}'>
-                </div>
-
-                <div class="product-info-wrapper">
-                    <div class="productBrandName">${productsFromLS[i].ProBrand} </div>
-                    <div class="proname-fcart-assured">
-                        <div class="productName">${productsFromLS[i].proName}</div>
-                        <div class="f-assured-img-wrap">
-                            <img src="https://static-assets-web.flixcart.com/fk-p-linchpin-web/fk-cp-zion/img/fa_62673a.png"
-                                alt="">
-                        </div>
-                    </div>
-                    <div class="price-info-wrap">
-                        <span class="actual-p-price">₹${productsFromLS[i].proPrice}</span>
-                        <span class="strike-price">₹1,000</span>
-                        <span class="discount-txt">50% off</span>
-                    </div>
-                    <div class="product-size">Size : <span class="size-info"> XL, XXL, 3XL, 4XL</span></div>
-                </div>
+            var divToAppendProductImage = document.getElementById("singleProductImage");
+            var divToAppendProductBrand = document.getElementById("for-product-brand");
+            var divToAppendProductName = document.getElementById("for-product-name");
+            var divToAppendProductprice = document.getElementById("for-product-price");
+            var divToAppendAddtocart = document.getElementById("for-add-to-cart-btn")
 
 
 
-            </div>`
+
+            var structure = ` <img src='${product.proImage} ' />`
+            var productBrand=`${product.ProBrand} `
+            var productName = `${product.proName}`
+            var productprice = `${product.proPrice}`
+            var addtocart = ` <button onclick='addCart(${JSON.stringify(product)})' >Add to cart</button>`
+            
+            divToAppendProductImage.innerHTML = structure;
+            divToAppendProductBrand.innerHTML = productBrand;
+            divToAppendProductName.innerHTML = productName;
+            divToAppendProductprice.innerHTML = productprice;
+            divToAppendAddtocart.innerHTML = addtocart;
+
+        }
+
+        function addCart(product) {
+            // alert("Adding to cart")
+            var currentUser = JSON.parse(localStorage.getItem("FlipcartCurrentUser"))
+            // console.log(currentUser.userEmail);
+            var userdata = JSON.parse(localStorage.getItem("FlipkartUsers"));
+            for (var i = 0; i < userdata.length; i++) {
+                if (currentUser.userEmail == userdata[i].userEmail) {
+                    // alert("got")
+                    if (userdata[i].cartProducts === undefined) {
+                        // userdata[i].cartProducts = "hello"
+
+                        userdata[i].cartProducts = [product]
+                    } else {
+                        userdata[i].cartProducts.push(product);
+                    }
+                    alert("Product added to cart")
+                    window.location.href = "./cart.html"
+                }
             }
-
-
-            divToAppendAllProducts.innerHTML = finalFlipkartMultiplePro;
+            localStorage.setItem("FlipkartUsers", JSON.stringify(userdata))
         }
 
-        function redirect(product) {
-            var singleProduct = JSON.stringify(product);
-            // console.log(s, " s here")
-            // alert("Working")
-            localStorage.setItem("FlipkartCurrentProduct", singleProduct);
-            window.location.href = './singleProduct.html'
-        }
-
+        
         function logout() {
             alert("Logout successful.")
             localStorage.removeItem("FlipcartCurrentUser")
@@ -161,8 +160,5 @@
 
         }
     </script>
-
-    <script src="./main.js"></script>
 </body>
-
 </html>
