@@ -11,7 +11,8 @@
 </head>
 
 <body>
-    <div id="singlPro-screen">
+
+    <div id="cartScreen">
         <div class="main-navbar-wrapper">
             <div class="navbar">
                 <div class="left-navbar">
@@ -52,52 +53,67 @@
             </div>
         </div>
 
-        <div class="second-navbar">
-            <div class="c-navbar-wrapper">
-                <div class="navLink-wrap">
-                    <span class="Nlink">Electronics</span>
-                    <span  class="nav-arrow"><i class="fa-solid fa-angle-down"></i></span>
+        <div class="cart-main-content-wrap">
+            <div class="left-side-cart-info">
+                <p class="c-p-cl">
+                    <span class="selected-opt">Flipkart (3)</span>
+                    <span>Grocery</span>
+                </p>
+
+                <div class="location-wrap">
+                    <div class="sp">Deliver to : <span>Sangli - 416416</span></div>
+                    <div class="change-l">Change</div>
                 </div>
-                <div class="navLink-wrap">
-                    <span class="Nlink">TV & Appliences</span>
-                    <span class="nav-arrow"><i class="fa-solid fa-angle-down"></i></span>
+
+                <div class="c-product-info-container">
+                    <div class="image-qty-wrap">
+                        <div class="cart-img-image">
+                            <img src="https://rukminim1.flixcart.com/image/224/224/kflftzk0/top/9/f/j/xl-gr5693-pink-harpa-original-imafwysgrnswdqk6.jpeg?q=90"
+                                alt="">
+                        </div>
+                        <div class="add-r-wrap">
+                            <div class="change-i">-</div>
+                            <div class="o-qty">1</div>
+                            <div class="change-i">+</div>
+
+                        </div>
+                    </div>
+
+                    <div class="cart-product-indormation">
+                        <div class="product-na-c">
+                            HARPA Casual Roll-up Sleeve Solid Women Pink Top
+                        </div>
+                        <div class="size-p">M</div>
+                        <div class="seller-info-c"><span> Sheller-HSAtLastradeFashion</span>
+                            <span class="fa">
+                                <img src="https://static-assets-web.flixcart.com/fk-p-linchpin-web/fk-cp-zion/img/fa_62673a.png" alt="">
+                            </span>
+                        </div>
+
+                        <div class="pricecontainer">
+                            <div class="realprice">₹374</div>
+                            <div class="linethroughPrice">₹1,199</div>
+                            <div class="discounttext">68% off</div>
+                        </div>
+                    </div>
+
+                    <div class="deliver-info">
+
+                    </div>
                 </div>
-                <div class="navLink-wrap">
-                    <span class="Nlink">Men</span>
-                    <span class="nav-arrow"><i class="fa-solid fa-angle-down"></i></span>
-                </div>
-                <div class="navLink-wrap">
-                    <span class="Nlink">Women</span>
-                    <span class="nav-arrow"><i class="fa-solid fa-angle-down"></i></span>
-                </div>
-                <div class="navLink-wrap">
-                    <span class="Nlink">Baby & Kids</span>
-                    <span class="nav-arrow"><i class="fa-solid fa-angle-down"></i></span>
-                </div>
-                <div class="navLink-wrap">
-                    <span class="Nlink">Home & Furniture</span>
-                    <span class="nav-arrow"><i class="fa-solid fa-angle-down"></i></span>
-                </div>
-                <div class="navLink-wrap">
-                    <span class="Nlink">Sports,Books & More</span>
-                    <span class="nav-arrow"><i class="fa-solid fa-angle-down"></i></span>
-                </div>
-                <div class="navLink-wrap">
-                    <span class="Nlink">Flights</span>
-                    <span class="nav-arrow"><i class="fa-solid fa-angle-down"></i></span>
-                </div>
-                <div class="navLink-wrap">
-                    <span class="Nlink">Offer Zone</span>
-                    <span class="nav-arrow"><i class="fa-solid fa-angle-down"></i></span>
-                </div>
-                <div class="navLink-wrap">
-                    <span class="Nlink">Grocery</span>
-                    <span class="nav-arrow"><i class="fa-solid fa-angle-down"></i></span>
-                </div>
+            </div>
+
+
+
+            <div class="rght-side-cst-info">
+
             </div>
         </div>
 
-        <div class="products-wrapper">
+
+
+        <div class="f-cart-container" id="FlipkartFinalCart">
+
             <div class="Singleproduct">
                 <div class="product-image-wrapper">
                     <div id="singleProductImage"></div>
@@ -127,9 +143,7 @@
             </div>
         </div>
 
-
     </div>
-
 
     <script>
         window.onload = function () {
@@ -151,51 +165,54 @@
 
             }
 
-            var product = JSON.parse(localStorage.getItem("FlipkartCurrentProduct"));
-
-            var divToAppendProductImage = document.getElementById("singleProductImage");
-            var divToAppendProductBrand = document.getElementById("for-product-brand");
-            var divToAppendProductName = document.getElementById("for-product-name");
-            var divToAppendProductprice = document.getElementById("for-product-price");
-            var divToAppendAddtocart = document.getElementById("for-add-to-cart-btn")
-
-
-
-
-            var structure = ` <img src='${product.proImage} ' />`
-            var productBrand = `${product.ProBrand} `
-            var productName = `${product.proName}`
-            var productprice = `${product.proPrice}`
-            var addtocart = ` <button onclick='addCart(${JSON.stringify(product)})' >Add to cart</button>`
-
-            divToAppendProductImage.innerHTML = structure;
-            divToAppendProductBrand.innerHTML = productBrand;
-            divToAppendProductName.innerHTML = productName;
-            divToAppendProductprice.innerHTML = productprice;
-            divToAppendAddtocart.innerHTML = addtocart;
-
-        }
-
-        function addCart(product) {
-            // alert("Adding to cart")
             var currentUser = JSON.parse(localStorage.getItem("FlipcartCurrentUser"))
-            // console.log(currentUser.userEmail);
-            var userdata = JSON.parse(localStorage.getItem("FlipkartUsers"));
+            var userdata = JSON.parse(localStorage.getItem("FlipkartUsers"))
+
+            var divToAppendAllProducts = document.getElementById("FlipkartFinalCart")
+            var products;
             for (var i = 0; i < userdata.length; i++) {
                 if (currentUser.userEmail == userdata[i].userEmail) {
-                    // alert("got")
-                    if (userdata[i].cartProducts === undefined) {
-                        // userdata[i].cartProducts = "hello"
-
-                        userdata[i].cartProducts = [product]
-                    } else {
-                        userdata[i].cartProducts.push(product);
-                    }
-                    alert("Product added to cart")
-                    window.location.href = "./cart.html"
+                    products = userdata[i].cartProducts
                 }
             }
-            localStorage.setItem("FlipkartUsers", JSON.stringify(userdata))
+
+            var finalProductCart = ""
+
+            for (var i = 0; i < products.length; i++) {
+
+                finalProductCart += `<div class="Singleproduct">
+                <div class="product-image-wrapper">
+                    <img src="${products[i].proImage}" /> 
+                </div>
+
+                <div class="product-info-wrapper">
+                    <div class="productBrandName" id="for-product-brand"> ${products[i].ProBrand} </div>
+                    <div class="proname-fcart-assured">
+                        <div class="productName" id="for-product-name">${products[i].proName} </div>
+                        <div class="f-assured-img-wrap">
+                            <img src="https://static-assets-web.flixcart.com/fk-p-linchpin-web/fk-cp-zion/img/fa_62673a.png"
+                                alt="">
+                        </div>
+                    </div>
+                    <div class="price-info-wrap">
+                        <span class="actual-p-price" id="for-product-price">₹${products[i].proPrice} </span>
+                        <span class="strike-price">₹1,000</span>
+                        <span class="discount-txt">50% off</span>
+                    </div>
+                    <div class="product-size">Size : <span class="size-info"> XL, XXL, 3XL, 4XL</span></div>
+
+                    <div class="addcartbtn" id="for-add-to-cart-btn"> </div>
+                </div>
+
+
+
+            </div>`
+
+
+            }
+
+
+            divToAppendAllProducts.innerHTML = finalProductCart;
         }
 
 
